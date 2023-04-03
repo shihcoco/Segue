@@ -12,10 +12,7 @@ class ViewController: UIViewController {
     var score = 0
     
     @IBOutlet weak var nameTextField: UITextField!
-    
-    
-    
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -37,12 +34,11 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToNext" {
+        if segue.identifier == "goTONext" {
             let destinationVC = segue.destination as? StoryPromptViewController
-            if let name = nameTextField.text {
-                destinationVC?.name = name
-                destinationVC?.score = score
+            destinationVC?.name = nameTextField.text!
+            destinationVC?.score = score
             }
         }
     }
-}
+
